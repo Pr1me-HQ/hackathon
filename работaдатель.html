@@ -5,6 +5,12 @@
     <meta name="keywords" content="Название организации">
     <meta name="description" content="">
     <title>пр_работодатель</title>
+
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+    <script src="js/firebaseApp.js"></script>
+    <script src="js/signOut.js"></script>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="работaдатель.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery-1.9.1.min.js" defer=""></script>
@@ -51,9 +57,10 @@
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-custom-font u-heading-font u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html">главная</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="register.html">вход</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" id="auth" href="register.html">вход</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="о-нас.html">о нас</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link">найти</a>
+</li><li class="u-nav-item"><a onclick="signOut()" class="u-button-style u-nav-link">выход</a>
 </li></ul>
               </div>
             </div>
@@ -239,5 +246,8 @@
 <script>
   document.getElementById('login').innerHTML = JSON.parse(localStorage.getItem('userProfile'))['Логин']
 </script>
+
+<script src="js/checkAuth.js"></script>
+
 
 </html>

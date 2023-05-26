@@ -14,6 +14,8 @@ function signIn(
                     querySnapshot.forEach(function(doc) {
                         if(doc.data()["Пароль"] == password){
                             // redirect to profile page
+                            localStorage.setItem("userType", "profileEmployees");
+                            localStorage.setItem("userID", doc.id);
                             localStorage.setItem("userProfile", JSON.stringify(doc.data()));
                             window.location.href = "профиль.html";
                             console.log(doc.data());
@@ -31,6 +33,8 @@ function signIn(
                     if(doc.data()["Пароль"] == password){
                         // redirect to profile page
                         localStorage.setItem("userProfile", JSON.stringify(doc.data()));
+                        localStorage.setItem("userType", "profileWorkers");
+                        localStorage.setItem("userID", doc.id);
                         console.log(doc.data());
                         window.location.href = "работaдатель.html";
                     }else{
