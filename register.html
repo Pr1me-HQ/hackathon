@@ -16,47 +16,48 @@
     <div class="container" id="container">
 	<div class="form-container sign-up-container">
 
-			<h1>Регистрация</h1>
-			
-			<input type="text" id="login" placeholder="Логин" required />
-			<input type="password" id="password" placeholder="Пароль" required />
-			<input type="text" placeholder="Номер" id="phoneNumber" required />
-			<input type="text" placeholder="Код из смс" id="verificationCode" required disabled />
-			<div id="timer"></div>
-			<div class="container-cards">
-				<input type="radio" name="card" id="card_one">
-				<input type="radio" name="card" id="card_two">
-
-				<label for="card_one">
-					<div class="card">
-						<span class="check_btn"><i class="fas fa-check"></i></span>
-						<!-- <div class="img">
-							<img src="img/image_1.jpg" alt="">
-						</div> -->
-						<h2 class="title">Ищу работу</h2>
-					</div>
-				</label>
-				<label for="card_two">
-					<div class="card">
-						<span class="check_btn"><i class="fas fa-check"></i></span>
-						<!-- <div class="img">
-							<img src="img/image_2.jpg" alt="">
-						</div> -->
-						<h2 class="title">Ищу работника</h2>
-					</div>
-				</label>
-			</div>
-			<button id="sign-up-button" onclick="signUp()">Отправить</button>
+			<form action="#">
+				<h1>Регистрация</h1>
+				
+				<input type="text" id="login" placeholder="Логин" required />
+				<input type="password" id="password" placeholder="Пароль" required />
+				<input type="text" placeholder="Номер" id="phoneNumber" required />
+				<input type="text" placeholder="Код из смс" id="verificationCode" required disabled />
+				<div id="timer"></div>
+				<div class="container-cards">
+					<input type="radio" name="card" id="card_one">
+					<input type="radio" name="card" id="card_two">
+					<label for="card_one">
+						<div class="card">
+							<span class="check_btn"><i class="fas fa-check"></i></span>
+							<!-- <div class="img">
+								<img src="img/image_1.jpg" alt="">
+							</div> -->
+							<h2 class="title">Ищу работу</h2>
+						</div>
+					</label>
+					<label for="card_two">
+						<div class="card">
+							<span class="check_btn"><i class="fas fa-check"></i></span>
+							<!-- <div class="img">
+								<img src="img/image_2.jpg" alt="">
+							</div> -->
+							<h2 class="title">Ищу работника</h2>
+						</div>
+					</label>
+				</div>
+				<button id="sign-up-button" onclick="signUp()">Отправить</button>
+			</form>
 
 	</div>
 	<div class="form-container sign-in-container">
-
+		<form action="#">
 			<h1>ВХОД</h1>
 			<input id="signInLogin" type="text" placeholder="Email" required />
 			<input id="signInPassword" type="password" placeholder="Password" required />
 			<a href="#">Забыли пароль</a>
 			<button onclick="signIn()">Войти</button>
-
+		</form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
