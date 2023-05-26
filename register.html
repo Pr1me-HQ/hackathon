@@ -5,36 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="register.css">
-    
-    
+    <link rel="stylesheet" href="css/register.css">    
+	<script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+	<script src="https://unpkg.com/imask"></script>
 </head>
 <body>
     <h2>Добро пожаловать</h2>
     <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
-			<h1>Создайте аккаунт</h1>
+			<h1>Регистрация</h1>
 			
-			
-			<input type="text" placeholder="имя" required />
-			<input type="email" placeholder="Email" required />
-			<input type="password" placeholder="Пароль" required />
-			<button>Зарегистрироваться</button>
+			<input type="text" id="login" placeholder="Логин" required />
+			<input type="password" id="password" placeholder="Пароль" required />
+			<input type="text" placeholder="Номер" id="phoneNumber" required />
+			<input type="text" placeholder="Код из смс" id="verificationCode" required disabled />
+			<div id="timer"></div>
+			<div class="container-cards">
+				<input type="radio" name="card" id="card_one">
+				<input type="radio" name="card" id="card_two">
+
+				<label for="card_one">
+					<div class="card">
+						<span class="check_btn"><i class="fas fa-check"></i></span>
+						<!-- <div class="img">
+							<img src="img/image_1.jpg" alt="">
+						</div> -->
+						<h2 class="title">Ищу работу</h2>
+					</div>
+				</label>
+					<label for="card_two">
+						<div class="card">
+							<span class="check_btn"><i class="fas fa-check"></i></span>
+							<!-- <div class="img">
+								<img src="img/image_2.jpg" alt="">
+							</div> -->
+							<h2 class="title">Ищу работника</h2>
+						</div>
+					</label>
+				</div>
+			<button id="sign-up-button" onclick="signUp()">Отправить</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="#">
 			<h1>ВХОД</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<input type="email" placeholder="Email" required />
-			<input type="password" placeholder="Password" required />
+			<input id="singInLogin" type="email" placeholder="Email" required />
+			<input id="signInPassword" type="password" placeholder="Password" required />
 			<a href="#">Забыли пароль</a>
-			<button>Войти</button>
+			<button onclick="signIn()">Войти</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -51,34 +72,28 @@
 			</div>
 		</div>
 	</div>
+	<div id="recaptcha-container"></div>
 </div>
-<!-- 
-<footer>
-	<p>
-		Created with <i class="fa fa-heart"></i> by
-		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-		- Read how I created this and how you can join the challenge
-		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-	</p>
-</footer> -->
 
     <script>
     
-    
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
-    
-    signUpButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-    });
-    
-    signInButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-    });
+		const signUpBtn = document.getElementById('signUp');
+		const signInBtn = document.getElementById('signIn');
+		const container = document.getElementById('container');
+		
+		signUpBtn.addEventListener('click', () => {
+			container.classList.add("right-panel-active");
+		});
+		
+		signInBtn.addEventListener('click', () => {
+			container.classList.remove("right-panel-active");
+		});
+
     </script>
 
-
-
+	<script src="js/phoneMask.js"></script>
+	<script src="js/firebaseApp.js"></script> 
+	<script src="js/signIn.js"></script>
+	<script src="js/signUp.js"></script>
 </body>
 </html>

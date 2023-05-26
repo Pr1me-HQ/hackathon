@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <ul class="nav">
+    <li onclick="showLogin()">Қадами 1</li>
+    <li onclick="showSignup()">Қадами 2</li>
+    <li onclick="showForgotPassword()">Қадами 3</li>
+    <li onclick="showSubscribe()">Қадами 4</li>
+    <li onclick="showContactUs()">Қадами 5</li>
+</ul>
+  <div class="wrapper">
+      <div class="rec-prism">
+          <div class="face face-top">
+        <div class="content">
+            <h2>Қадами 4</h2>
+          <small class="opitrab">тачриба</small>
+          <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+          <form onsubmit="event.preventDefault()">
+            <div class="field-wrapper">
+            
+            </div>
+            <div class="field-wrapper">
+              <input type="submit"value="Далее" onclick="showContactUs()" >
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="face face-front">
+        <div class="content">
+            <h2>Қадами 1</h2>
+            <form onsubmit="event.preventDefault()">
+                <div class="field-wrapper">
+                    <required>
+                    <input type="text" name="username" placeholder="username">
+                    <label>Номи пурра</label></required>
+            </div>
+            <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email">
+                <label>Санаи таваллуд</label>
+            </div>
+            <div class="field-wrapper">
+                <label class="cemya">Ҷинсро муайян кунед</label>
+                <input type="radio" name="a">мард
+                <input type="radio" name="a">зан
+              
+            </div>
+            <div class="field-wrapper">
+              
+                <label class="cemya">Аҳволи оилавӣ</label>
+                <select name="" id="cemya">
+                    <option value="Холост">муҷаррад</option>
+                    <option value="В браке">Оиладор</option>
+                    <option value="Разведен">Разведен</option>
+                </select>
+            </div>
+            <div class="field-wrapper">
+                <input type="submit" value="Далее" onclick="showSignup()">
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="face face-back">
+        <div class="content">
+            <h2>Қадами 3</h2>
+            <label class="spetsial">Ихтисос</label>
+            <select name="" id="spetsiall">
+                <option value="Холост">Рушди Frontend</option>
+                <option value="В браке">Рушди пушти сар</option>
+                <option value="Разведен">Рушди мобилӣ</option>
+            </select>
+            <br><br><br>
+            <label class="spetsial">Маориф</label>
+            <select name="" id="">
+                <option value="Холост">Бакалавр</option>
+                <option value="В браке">Дараҷаи номзадӣ</option>
+                <option value="Разведен">Курсҳои онлайн</option>
+            </select>
+<br><br>
+          
+                <label id="label">Забонро интихоб кунед</label>
+                <br><br>
+                <input type="radio" name="a">РУ
+                <input type="radio" name="a">АН
+                <input type="radio" name="a">ТО
+                <br><br>
+                <form onsubmit="event.preventDefault()">
+            <div class="field-wrapper">
+            </div>
+            <div class="field-wrapper">
+                <input type="submit"  value="Далее" onclick="showSubscribe()"">
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="face face-right">
+        <div class="content">
+            <h2>Қадами 2</h2>
+            <form onsubmit="event.preventDefault()">
+                <div class="field-wrapper">
+                    <input type="text" name="email" placeholder="email">
+                    <label>Суроға</label>
+                </div>
+                <div class="field-wrapper">
+                    <input type="text" name="password" placeholder="password" autocomplete="new-password">
+              <label>Контакты</label>
+            </div>
+            <div class="field-wrapper">
+              <input type="text" name="password2" placeholder="password" autocomplete="new-password">
+              <label>почтаи электронӣ</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="submit"  value="Далее" onclick="showForgotPassword()">
+            </div>
+        </form>
+        </div>
+      </div>
+      <div class="face face-left">
+          <div class="content">
+            <h2>Қадами 5</h2>
+          <form onsubmit="event.preventDefault()">
+            <div class="field-wrapper">
+              <input type="text" name="name" placeholder="name">
+              <label>Номи худро ворид кунед</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email">
+              <label>Почтаи электронии худро ворид кунед</label>
+            </div>
+            <div class="field-wrapper">
+              <textarea placeholder="your message"></textarea>
+              <label>
+                паёми шумо</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="submit" value="Далее" onclick="showThankYou()">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="face face-bottom">
+    <div class="content">
+            <div class="thank-you-msg">
+                Сипос!
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <script src="index.js" ></script>
+</body>
+</html>

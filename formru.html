@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="css/form.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -25,7 +25,10 @@
           <textarea name="" id="textarea" cols="30" rows="10"></textarea>
           <form onsubmit="event.preventDefault()">
             <div class="field-wrapper">
-              <input type="submit" value="Далее" onclick="showContactUs()" >
+            
+            </div>
+            <div class="field-wrapper">
+              <input type="submit"value="Далее" onclick="showContactUs()" >
             </div>
           </form>
         </div>
@@ -40,19 +43,19 @@
                     <label>ФИО</label></required>
             </div>
             <div class="field-wrapper">
-                <input type="date" name="dateOfBirth" placeholder="email">
+                <input type="text" name="email" placeholder="email">
                 <label>Дата рождения</label>
             </div>
             <div class="field-wrapper">
                 <label class="cemya">Укажите пол</label>
-                <input type="radio" name="a" id="mujik">мужской
+                <input type="radio" name="a">мужской
                 <input type="radio" name="a">женский
               
             </div>
             <div class="field-wrapper">
               
                 <label class="cemya">Семейное положени</label>
-                <select name="" id="family">
+                <select name="" id="cemya">
                     <option value="Холост">Холост</option>
                     <option value="В браке">В браке</option>
                     <option value="Разведен">Разведен</option>
@@ -68,25 +71,25 @@
         <div class="content">
             <h2>Шаг 3</h2>
             <label class="spetsial">Специализация</label>
-            <select name="speciality">
+            <select name="" id="spetsiall">
                 <option value="Холост">Фронтенд-разработка</option>
                 <option value="В браке">Бэкенд-разработка</option>
                 <option value="Разведен">Мобильная разработка</option>
             </select>
             <br><br><br>
-            <label class="spetsial">Образование</label>
-            <select name="education">
-                <option value="Бакалавр">Бакалавр</option>
-                <option value="Магистратура">Магистратура</option>
-                <option value="Онлайн-курсы">Онлайн-курсы</option>
+            <label class="spetsial">Оброзование</label>
+            <select name="" id="">
+                <option value="Холост">Бакалавр</option>
+                <option value="В браке">Магистратура</option>
+                <option value="Разведен">Онлайн-курсы</option>
             </select>
 <br><br>
           
                 <label id="label">Выберите язык</label>
                 <br><br>
-                <input type="checkbox" value="Русский" id="lang">Русский
-                <input type="checkbox" value="Ангийский" id="lang">Ангийский
-                <input type="checkbox" value="Таджикский" id="lang">Таджикский
+                <input type="radio" name="a">RU
+                <input type="radio" name="a">EN
+                <input type="radio" name="a">UZ
                 <br><br>
                 <form onsubmit="event.preventDefault()">
             <div class="field-wrapper">
@@ -102,16 +105,16 @@
             <h2>Шаг 2</h2>
             <form onsubmit="event.preventDefault()">
                 <div class="field-wrapper">
-                    <input type="text" name="address" placeholder="Адркс">
+                    <input type="text" name="email" placeholder="email">
                     <label>Адрес</label>
                 </div>
                 <div class="field-wrapper">
-                    <input type="text" name="contacts" placeholder="password" autocomplete="new-password">
+                    <input type="text" name="password" placeholder="password" autocomplete="new-password">
               <label>Контакты</label>
             </div>
             <div class="field-wrapper">
-              <input type="text" name="email" placeholder="password" autocomplete="new-password">
-              <label>Email</label>
+              <input type="text" name="password2" placeholder="password" autocomplete="new-password">
+              <label>email</label>
             </div>
             <div class="field-wrapper">
                 <input type="submit"  value="Далее" onclick="showForgotPassword()">
@@ -121,11 +124,20 @@
       </div>
       <div class="face face-left">
           <div class="content">
-        <h2>Шаг 5</h2>
+            <h2>Шаг 5</h2>
           <form onsubmit="event.preventDefault()">
             <div class="field-wrapper">
-              <textarea placeholder="Опыт работы" name="experience" rows="5"></textarea>
-              <label>Опыт работы</label>
+              <input type="text" name="name" placeholder="name">
+              <label>Введите свое имя</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email">
+              <label>Введите свой e-mail</label>
+            </div>
+            <div class="field-wrapper">
+              <textarea placeholder="your message"></textarea>
+              <label>
+                Ваше сообщение</label>
             </div>
             <div class="field-wrapper">
                 <input type="submit" value="Далее" onclick="showThankYou()">
@@ -142,7 +154,6 @@
     </div>
     </div>
 </div>
-<script src="js/firebaseApp.js"></script>
-    <script src="js/steps.js" ></script>
+    <script src="index.js" ></script>
 </body>
 </html>

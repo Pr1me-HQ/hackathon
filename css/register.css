@@ -16,6 +16,96 @@ body {
 	margin: -20px 0 50px;
 }
 
+.container-cards {
+    display: flex;
+	flex-direction: row;
+	padding: 0;
+}
+
+
+
+.img {
+    width: 20px;
+    height: 20px;
+    border: .3rem solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .4);
+    overflow: hidden;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+}
+.card {
+    background-color: rgb(16, 84, 95);
+    padding: 1rem;
+	margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: .5rem;
+    position: relative;
+    cursor: pointer;
+    border: .5rem solid transparent;
+    transition: 200ms ease-in-out transform;
+}
+.check_btn {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    background-color: rgba(92, 92, 92, .4);
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: .5rem;
+}
+.fa-check {
+    color: #fff;
+}
+.title {
+    margin: 1.5rem 0;
+	font-weight: 100;
+}
+.title,
+ul li {
+    color: #1f1208;
+}
+
+.card:hover {
+    transform: scale(1.02)
+}
+.card:active {
+    transform: scale(.97)
+}
+
+input[id="card_one"]:checked ~ label[for="card_one"] .card,
+input[id="card_two"]:checked ~ label[for="card_two"] .card
+{
+    border-color: rgb(21, 238, 21);
+}
+/* you can see based on which card is checked the border color will be changed */
+/* ~ selector selects the sibling elements, in this case the label */
+
+input[id="card_one"]:checked ~ label[for="card_one"] .card .check_btn,
+input[id="card_two"]:checked ~ label[for="card_two"] .card .check_btn
+{
+    background-color: rgb(21, 238, 21);
+}
+
+input[id="card_one"]:checked ~ label[for="card_one"] .card .img,
+input[id="card_two"]:checked ~ label[for="card_two"] .card .img
+{
+    border-color: rgb(21, 238, 21);
+    box-shadow: 0 0 .5rem rgba(21, 238, 21, .6);
+}
+
+input[type="radio"] {
+	display: none;
+}
+
 h1 {
 	font-weight: bold;
 	margin: 0;
@@ -95,7 +185,7 @@ input {
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
-	overflow: hidden;
+	/* overflow: hidden; */
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
@@ -121,6 +211,8 @@ input {
 .sign-up-container {
 	left: 0;
 	width: 50%;
+	overflow: scroll;
+	-webkit-scrollbar-width: 0;  /* Chrome */
 	opacity: 0;
 	z-index: 1;
 }
@@ -236,4 +328,32 @@ footer i {
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+	* {
+		font-size: 100%;
+	}
+
+	.container {
+		min-height: 100vh;
+	}
+
+	.card {
+		width: 70%;
+		display: flex;
+	}
+
+	.sign-up-container, .sign-in-container {
+		overflow-y: scroll;
+        -webkit-scrollbar-width: 0;  /* Chrome */
+		top: 3rem;
+		height: max-content;
+		scale: 0.8;
+	}	
+
+	.form-container {
+		width: 60%;
+	}
+
 }
