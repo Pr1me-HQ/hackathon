@@ -224,7 +224,7 @@ function showThankYou(){
     "Опыт работы": document.getElementsByName('experience')[0].value,
     "Образование": document.getElementsByName('education')[0].value,
     "Специальность": document.getElementsByName('speciality')[0].value,
-    // "Навыки": document.getElementsByName('skills')[0].value,
+    "О себе": document.getElementsByName('about')[0].value,
     "Контакты": document.getElementsByName('contacts')[0].value,
   }
 
