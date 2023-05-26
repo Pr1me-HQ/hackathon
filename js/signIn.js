@@ -14,7 +14,9 @@ function signIn(
                     querySnapshot.forEach(function(doc) {
                         if(doc.data()["Пароль"] == password){
                             // redirect to profile page
+                            localStorage.setItem("userProfile", JSON.stringify(doc.data()));
                             window.location.href = "профиль.html";
+                            console.log(doc.data());
                         }else{
                             alert("Неверный пароль");
                         }
@@ -28,7 +30,9 @@ function signIn(
                 querySnapshot.forEach(function(doc) {
                     if(doc.data()["Пароль"] == password){
                         // redirect to profile page
-                        window.location.href = "профиль.html";
+                        localStorage.setItem("userProfile", JSON.stringify(doc.data()));
+                        console.log(doc.data());
+                        window.location.href = "работадатель.html";
                     }else{
                         alert("Неверный пароль");
                     }

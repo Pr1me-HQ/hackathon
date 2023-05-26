@@ -9,23 +9,9 @@ const firebaseConfig = {
   appId: "1:914293441355:web:41cd9cb9a1a04b68a7dece",
   measurementId: "G-QQPEC6938Q"
 };
+
 var verificationId, verificationCode;
 
 firebase.initializeApp(firebaseConfig);
   
 var db = firebase.firestore();
-
-// 'recaptcha-container' is the ID of an element in the DOM.
-var applicationVerifier = new firebase.auth.RecaptchaVerifier(
-      'recaptcha-container',
-      {
-        'size': 'invisible',
-        'callback': function(response) {
-          console.log(response);
-        }
-      }
-      );
-
-      applicationVerifier.render().then(function(widgetId) {
-        window.recaptchaWidgetId = widgetId;
-});

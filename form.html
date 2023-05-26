@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
     <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
@@ -84,9 +87,9 @@
           
                 <label id="label">Выберите язык</label>
                 <br><br>
-                <input type="checkbox" value="Русский" id="lang">Русский
-                <input type="checkbox" value="Ангийский" id="lang">Ангийский
-                <input type="checkbox" value="Таджикский" id="lang">Таджикский
+                <input type="checkbox" value="Русский" id="lang">Русский<br>
+                <input type="checkbox" value="Ангийский" id="lang">Ангийский<br>
+                <input type="checkbox" value="Таджикский" id="lang">Таджикский<br>
                 <br><br>
                 <form onsubmit="event.preventDefault()">
             <div class="field-wrapper">

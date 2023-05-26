@@ -20,5 +20,3 @@ languagesSpan.textContent = userProfile["Языки"].join(", ");
 addressSpan.textContent = userProfile["Адрес"];
 contactsSpan.textContent = userProfile["Контакты"];
 experienceSpan.textContent = userProfile["Опыт работы"];
-
-// Set the values of other spans as needed
