@@ -32,7 +32,7 @@ function signIn(
                         // redirect to profile page
                         localStorage.setItem("userProfile", JSON.stringify(doc.data()));
                         console.log(doc.data());
-                        window.location.href = "работадатель.html";
+                        window.location.href = "работaдатель.html";
                     }else{
                         alert("Неверный пароль");
                     }
