@@ -237,4 +237,9 @@
     margin-top: 10%;
   }
 
- 
+  input[type="date"]{
+    border: 2px solid #FBA61B ;
+    height: 50px;
+    width:  200px;
+    margin-top: 20px;
+  }
