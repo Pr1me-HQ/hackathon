@@ -14,11 +14,11 @@ function signIn(
                     querySnapshot.forEach(function(doc) {
                         if(doc.data()["Пароль"] == password){
                             // redirect to profile page
+                            console.log(doc.data());
                             localStorage.setItem("userType", "profileEmployees");
                             localStorage.setItem("userID", doc.id);
-                            localStorage.setItem("userProfile", JSON.stringify(doc.data()));
-                            window.location.href = "профиль.html";
-                            console.log(doc.data());
+                            window.location.href = "работaдатель.html";
+                            console.log(doc);
                         }else{
                             alert("Неверный пароль");
                         }
@@ -36,7 +36,7 @@ function signIn(
                         localStorage.setItem("userType", "profileWorkers");
                         localStorage.setItem("userID", doc.id);
                         console.log(doc.data());
-                        window.location.href = "работaдатель.html";
+                        window.location.href = "профиль.html";
                     }else{
                         alert("Неверный пароль");
                     }
