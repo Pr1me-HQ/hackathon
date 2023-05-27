@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/firebaseApp.js"></script>
-    
-<link rel="stylesheet" href="vacans.css" media="screen">
+
+    <link rel="stylesheet" href="vacans.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.10.12, nicepage.com">
@@ -21,56 +21,9 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
    
-    <style>
-      .search {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .search__wrapper {
-        width: 100%;
-        max-width: 500px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .search__field {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      }
-      .search__input {
-        width: 100%;
-        height: 100%;
-        padding: 0 10px;
-        border: none;
-        outline: none;
-        font-size: 16px;
-        font-family: 'Roboto', sans-serif;
-        color: #000;
-      }
-      .search__button {
-        width: 50px;
-        height: 50px;
-        border: none;
-        outline: none;
-        background-color: #fff;
-        cursor: pointer;
-      }
-      .search__icon {
-        width: 20px;
-        height: 20px;
-        fill: #000;
-      }
-    </style>
+
+    <!-- import bootstrap icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
     <meta name="theme-color" content="#003ecb">
     <meta property="og:title" content="пр_работодатель">
@@ -97,9 +50,9 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="index.html" style="padding: 10px 40px 10px 10px;">главная</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="register.html" style="padding: 10px 40px 10px 10px;">Вход</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="о-нас.html" style="padding: 10px 40px 10px 10px;">о нас</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" style="padding: 10px 62px 10px 10px;">найти</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="register.html" style="padding: 10px 40px 10px 10px;">Вход/Регистрация</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="о-нас.html" style="padding: 10px 40px 10px 10px;">О нас</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href='#' style="padding: 10px 62px 10px 10px;">Вакансии</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -109,7 +62,7 @@
                 <ul class="u-align-center u-custom-font u-heading-font u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html">главная</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" id="auth" href="register.html">вход</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="о-нас.html">о нас</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">найти</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="vacancies.html">вакансии</a>
 </li></ul>
               </div>
             </div>
@@ -136,13 +89,13 @@
             </div>
           </div>
         </div>
-      </div></header>
+      </div>
+    </header>
 
     <section class="u-clearfix u-section-1" id="sec-763f">
       <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            
+          <div class="u-layout">            
 
             <div id="jobsContainer">
               <h1>Рекомендуемые</h1>
@@ -164,14 +117,13 @@
               <div class="search__wrapper">
                 <div class="search__field">
                   <input type="text" placeholder="Поиск" class="search__input">
-                  <button class="search__button">
-                    <svg class="search__icon">
-                    </svg>
-                  </button>
                 </div>
               </div>
             </div>
-      
+            <button class="search__button">
+              <i class="fa fa-search"></i>Поиск
+            </button>
+            
       </div>
     </section>
         <!-- Modal to add job -->
@@ -306,4 +258,6 @@
     </section>
   
     <script src="js/checkAuth.js"></script>
-</body></html>
+    
+  </body>
+</html>
