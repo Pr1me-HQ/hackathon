@@ -16,7 +16,7 @@
     <div class="container" id="container">
 	<div class="form-container sign-up-container">
 
-			<form onsubmit="signUp()">
+			<form onsubmit="signUp()" id="signUp">
 				<h1>Регистрация</h1>
 				
 				<input type="text" id="login" placeholder="Логин" required />
@@ -51,7 +51,7 @@
 
 	</div>
 	<div class="form-container sign-in-container">
-		<form onsubmit="signIn()">
+		<form onsubmit="signIn()" id="signIn">
 			<h1>ВХОД</h1>
 			<input id="signInLogin" type="text" placeholder="Email" required />
 			<input id="signInPassword" type="password" placeholder="Password" required />

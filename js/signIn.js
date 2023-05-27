@@ -50,3 +50,13 @@ function signIn(
         }
     );
 }
+
+document.getElementById("signIn").addEventListener("submit", function(e){
+    e.preventDefault();
+    signIn();
+});
+
+document.getElementById("signUp").addEventListener("submit", function(e){
+    e.preventDefault();
+    signUp();
+});
