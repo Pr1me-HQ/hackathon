@@ -51,12 +51,12 @@ function signIn(
     );
 }
 
-document.getElementById("signIn").addEventListener("submit", function(e){
+document.getElementById("signInForm").addEventListener("submit", function(e){
     e.preventDefault();
     signIn();
 });
 
-document.getElementById("signUp").addEventListener("submit", function(e){
+document.getElementById("signUpForm").addEventListener("submit", function(e){
     e.preventDefault();
     signUp();
 });
