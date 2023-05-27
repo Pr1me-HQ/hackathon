@@ -174,7 +174,7 @@
       
       </div>
     </section>
-            <!-- Modal to add job -->
+        <!-- Modal to add job -->
 <div class="modal fade" id="addJobModal" tabindex="-1" aria-labelledby="addJobModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -206,12 +206,17 @@
         <h5 class="modal-title" id="getJobModalLongTitle">Отклики</h5>
       </div>
       <div class="modal-body" id="responsesContainer">
-
+          <input type="text" class="form-control" id="responseName" placeholder="Имя">
+          <input type="text" id="responseComment" class="form-control" placeholder="Комментарий">
+          <input type="text" id="responseTime" class="form-control" placeholder="Время">
+          <label for="responseMark">1</label>
+          <input type="range" max="10" min="1" id="responseMark" class="form-control" placeholder="Оценка">
+          <button class="btn btn-primary" id="responseSubmit">Отправить</button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="
-        $('#getJobModal').modal('hide');
-          " data-dismiss="modal">ОК</button>
+        $('#getJobModal').modal('hide');"
+          " data-dismiss="modal">Отмена</button>
       </div>
     </div>
   </div>
@@ -289,7 +294,7 @@
         <p class="u-small-text u-text u-text-variant u-text-1">Все права защещены.</p>
       </div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+      <a class="u-link" href="#" target="_blank">
         <span>Website Templates</span>
       </a>
       <p class="u-text">

@@ -49,7 +49,9 @@ function addJob(
 }
 
 function getJobs(jobsContainer = document.getElementById("jobsContainer")) {
+  
     db.collection("jobs").get().then((querySnapshot) => {
+      
       var table = document.createElement("table");
       table.classList.add("table");
   
@@ -71,25 +73,44 @@ function getJobs(jobsContainer = document.getElementById("jobsContainer")) {
   
       querySnapshot.forEach((doc) => {
         var jobData = doc.data();
+        console.log(jobData)
   
         var tableRow = document.createElement("tr");
-        if (jobData["ID работодателя"] === localStorage.getItem("userID"))
-          tableRow.innerHTML =  `
-            <td>${jobData["Позиция"]}</td>
-            <td>${jobData["Оплата"]}</td>
-            <td>${jobData["Описание"]}</td>
-            <td>${jobData["Опыт"]}</td>
-            <td>${jobData["Время"]}</td>
-            <td>${jobData["Дедлайн"]}</td>
-            <td><button class="btn btn-primary" onclick="getJob('${doc.id}')">
-              Посмотреть отклики
-            </button></td> : 
-          }`;
-  
+        if (localStorage.getItem("userType") === "profileEmployees"){
+          if (jobData["ID работодателя"] === localStorage.getItem("userID"))
+            tableRow.innerHTML =  `
+              <td>${jobData["Позиция"]}</td>
+              <td>${jobData["Оплата"]}</td>
+              <td>${jobData["Описание"]}</td>
+              <td>${jobData["Опыт"]}</td>
+              <td>${jobData["Время"]}</td>
+              <td>${jobData["Дедлайн"]}</td>
+              <td><button class="btn btn-primary" onclick="getJob('${doc.id}')">
+                Посмотреть отклики
+              </button></td> : 
+            }`;
+          else
+            null;
+        }
+          else
+              tableRow.innerHTML =  `
+              <td>${jobData["Позиция"]}</td>
+              <td>${jobData["Оплата"]}</td>
+              <td>${jobData["Описание"]}</td>
+              <td>${jobData["Опыт"]}</td>
+              <td>${jobData["Время"]}</td>
+              <td>${jobData["Дедлайн"]}</td>
+              <td><button class="btn btn-primary" onclick="addResponse('${doc.id}')">
+                Откликнуться
+              </button></td> :
+            }`;
+
+
         tableBody.appendChild(tableRow);
       });
   
       table.appendChild(tableBody);
+      console.log(table);
       jobsContainer.appendChild(table);
     });
 }
@@ -103,15 +124,17 @@ function getJob(jobID) {
     jobData["Отклики"].forEach((response) => {
       console.log(response);
       var responseContainer = document.getElementById("responsesContainer");
+      if (responseContainer.innerHTML === "Откликов пока нет")
+      responseContainer.innerHTML = "";
       var responseDiv = document.createElement("div");
       responseDiv.classList.add("card");
       responseDiv.classList.add("mb-3");
       responseDiv.innerHTML = `
         <div class="card-body">
-          <h5 class="card-title">${response["Имя"]}</h5>
-          <p class="card-text">${response["Комментарий"]}</p>
-          <p class="card-text">${response["Время"]}</p>
-          <p class="card-text">${response["Оценка"]}</p>
+          <h5 class="card-title">Имя: ${response["Имя"]}</h5>
+          <p class="card-text">Комментарий: ${response["Комментарий"]}</p>
+          <p class="card-text">Время: ${response["Время"]}</p>
+          <p class="card-text">Оценка: ${response["Оценка"]}</p>
         </div>
       `;
       responseContainer.appendChild(responseDiv);
@@ -120,10 +143,15 @@ function getJob(jobID) {
 }
 
 function addResponse(jobID) {
-  var name = document.getElementById("name").value;
-  var comment = document.getElementById("comment").value;
-  var time = document.getElementById("time").value;
-  var mark = document.getElementById("mark").value;
+  $('#getJobModal').modal('show');
+  document.getElementById("responseSubmit").onclick = function() {submitResponse(jobID)};
+}
+
+function submitResponse(jobID){
+  var name = document.getElementById("responseName").value;
+  var comment = document.getElementById("responseComment").value;
+  var time = document.getElementById("responseTime").value;
+  var mark = document.getElementById("responseMark").value;
 
   db.collection("jobs").doc(jobID).update({
     "Отклики": firebase.firestore.FieldValue.arrayUnion({
@@ -133,10 +161,12 @@ function addResponse(jobID) {
       "Оценка": mark
     })
   })
+  
   .then(function() {
     console.log("Document successfully updated!");
     $('#addResponseModal').modal('hide');
   })
+  
   .catch(function(error) {
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
